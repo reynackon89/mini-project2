@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProfile1sTable extends Migration
+class CreateAnswersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateProfile1sTable extends Migration
      */
     public function up()
     {
-        Schema::create('profile1s', function (Blueprint $table) {
+        Schema::create('answers', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('fname')->nullable();
-            $table->string('lname')->nullable();
-            $table->longText('body')->nullable();
+            $table->integer('question_id');
+            $table->longText('body');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateProfile1sTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profile1s');
+        Schema::dropIfExists('answers');
     }
 }
