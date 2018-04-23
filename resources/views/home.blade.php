@@ -27,7 +27,7 @@
                                             <div class="card-footer">
                                                 <p class="card-text">
 
-                                                    <a class="btn btn-primary float-right" href="{{ route('question.show', ['id' => $question->id]) }}">
+                                                    <a class="btn btn-primary float-right" href="#">
                                                         View
                                                     </a>
                                                 </p>
