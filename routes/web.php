@@ -19,6 +19,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+Route::get('/user/{user_id}/profile/{profile_id}', 'ProfileController@show')->name('profile.show');
 
-Route::get('/home', 'HomeController@index')->name('home');
+#Route::get('/question/{question_id}/answer/{answer_id}', 'AnswerController@show')->name('answer.show');
+
+
+#Route::resources([
+ #   'question' => 'QuestionController',
+#]);
