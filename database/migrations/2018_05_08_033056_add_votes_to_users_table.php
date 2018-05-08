@@ -13,8 +13,12 @@ class AddVotesToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
+        Schema::create('answers', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('user_id');
+            $table->integer('question_id');
+            $table->longText('body');
+            $table->timestamps();
         });
     }
 
